@@ -77,6 +77,8 @@ async def start(message: Message, bot: Bot):
             if data.get('banned', False):
                 await message.answer("❌ Вы забанены и не можете использовать бота.")
                 return
+    if not os.path.exists('database'):
+        os.makedirs('database')
 
     
     args = message.text.split()
@@ -688,5 +690,6 @@ if __name__ == '__main__':
         asyncio.run(main())
     except KeyboardInterrupt:
         print('Exit')
+
 
 

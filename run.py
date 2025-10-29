@@ -15,6 +15,11 @@ from config import TOKEN, ADMIN_ID, amount, REFERAL_BONUS, DISCOUNTED_PRICE, REG
 
 import keyboards as kb
 
+import os
+
+if not os.path.exists('database'):
+    os.makedirs('database')
+
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
@@ -680,3 +685,4 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
 
         print('Exit')
+

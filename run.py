@@ -679,6 +679,9 @@ async def admin(message: Message):
         await message.answer(f"Недостаточно прав, id: {message.from_user.id}")
     
 async def main():
+    if not os.path.exists('database'):
+        os.makedirs('database')
+    
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
@@ -690,6 +693,7 @@ if __name__ == '__main__':
         asyncio.run(main())
     except KeyboardInterrupt:
         print('Exit')
+
 
 
 

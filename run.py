@@ -13,7 +13,7 @@ from aiogram.fsm.context import FSMContext
 
 from config import TOKEN, ADMIN_ID, amount, REFERAL_BONUS, DISCOUNTED_PRICE, REGULAR_PRICE, BOT_URL
 
-from app import keyboards as kb
+import keyboards as kb
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -678,4 +678,5 @@ if __name__ == '__main__':
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
+
         print('Exit')
